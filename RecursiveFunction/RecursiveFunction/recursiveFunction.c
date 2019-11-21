@@ -41,6 +41,11 @@ int main(int argc, char* argv[]) {
 	fgets(tempBuffer, sizeof(tempBuffer), readFp);
 	size = atoi(tempBuffer);
 
+	if (size > 100) {
+		printf("인자의 개수가 허용치를 초과하였습니다.");
+		return 0;
+	}
+
 	psize = &size;
 	
 	intArray = (int*)malloc(sizeof(int)*size); // 첫줄에 있는 크기로 동적할당
